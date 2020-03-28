@@ -2,6 +2,7 @@
   "name": "react-i18n-auto",
   "version": "1.0.0",
   "description": "react-i18n-auto 中文国际化自动化，babel插件",
+  "Keywords": "react,babel,webpack,i18n,国际化",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
