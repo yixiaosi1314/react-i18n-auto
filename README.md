@@ -44,7 +44,7 @@ generator.gen({
 
 
   // 非react16+，babel7+请自行配置babelrc，同时加入react-i18n-auto插件，配置方法同.babelrc，
-  // 此配置项将使pluginOptions失效，已添加到react-i18n-auto的配置中
+  // 此配置项将使pluginOptions失效
   babelrc:{
      plugins:[
         ...
@@ -57,7 +57,7 @@ generator.gen({
   
   
   
-  //针对react-i18n-auto插件配置（默认配置）
+  //针对react-i18n-auto插件配置项（默认配置）
   pluginOptions: {
   
     prefixKey: 'I_', // uuidKey 前缀
