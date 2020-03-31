@@ -29,47 +29,53 @@ generator.gen({
   src: path.resolve(__dirname, './code'), //源文件目录（必选）array|string
 
   outputPath: path.resolve(__dirname, './output'), //国际化配置输出目录（必选）
+  
 
   // 生成本地化语言包（可选）
   translation: {
-    // en_US 语言包目录
     en_US: {
       source: [ path.resolve(__dirname, './output/en_US/英文翻译.xlsx'), ...]   //翻译文件excel array|string
     }
   },
 
-  // 非react16+，babel7+请自行配置，同时加入react-i18n-auto插件，同.babelrc配置，true||{}
-  // 当有babelrc配置时，pluginOptions无效，可将pluginOptions加入到react-i18n-auto的配置中
+  // 非react16+，babel7+请自行配置babelrc，同时加入react-i18n-auto插件，配置方法同.babelrc，
+  // 此配置项将使pluginOptions失效，已添加到react-i18n-auto的配置中
   babelrc:{
      plugins:[
         ...
         ['react-i18n-auto',{...pluginOptions}]
      ]
   },
-  // 针对react-i18n-auto插件配置（以下为默认配置）
+  // or
+  babelrc: true //使用当前项目.babelrc配置
+  
+  
+  //针对react-i18n-auto插件配置（默认配置）
   pluginOptions: {
     prefixKey: 'I_', // uuidKey 前缀
 
     $AI: '$AI', //全局方法$AI，参考localePolyfill.js
 
-    // 排除不需要国际化配置的调用方法
-    // $AI('key','value') key将取代自动生成的uuidKey
-    excludedCall: ['$AI', 'require', '$$AI', 'console.log', 'chalk.yellow'],//$$AI('value') 标记不翻译字符
+    // 排除不需要国际化配置的调用方法， $AI('key','value') key将取代自动生成的uuidKey，$$AI('value') 标记不翻译字符
+    excludedCall: ['$AI', 'require', '$$AI', 'console.log', 'chalk.yellow'],
 
-    excludedPattern: /\.\w+$/, // // 排除不需要配置的字符串，默认文件名
+    excludedPattern: /\.\w+$/, // 排除不需要配置的字符串，默认文件名
   }
 })
 
 ```
-然后运行 `node  i18n.config.js` 自动生成配置文件，将`localePolyfill.js`，`localeUtils.js`，语言包文件自动生成到`outputPath`目录下
+然后运行 `node  i18n.config.js` 自动生成配置文件
+
+将`localePolyfill.js`，`localeUtils.js`，语言包文件自动生成到`outputPath`目录下
 
 `localePolyfill.js`暴露全局方法 `$AI`, `$$AI`  和全局变量 `LOCALE` （语言包），`LOCALE_VERSION` （语言包版本）
 
-**更多配置请移步至[react-i18n-auto github主页](https://github.com/mr18/react-i18n-auto)**
+
 
 #### 第三步：为每一个entry入口添加localePolyfill.js
-webpack.config.js
+
 ```
+// webpack.config.js
 const path = require('path')
 module.exports = {
   entry: {
@@ -96,6 +102,7 @@ module.exports = {
   'I_2aq02r1': 'Teacher'
 }
 ```
+
 #### 第五步：唯一的额外的工作，动态加载语言包时（如果语言包已提前加载则无需此操作）
 **修改前 **
 ```
