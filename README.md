@@ -8,7 +8,7 @@ react-i18n-auto专门为中文国际化提供的自动化方案，快速迭代�
 
  >  npm install react-i18n-auto --save-dev
 
-#### [说明文档](./doc.md)
+#### [说明文档](./documentation.md)
 
 
 #### FAQ
