@@ -26,15 +26,19 @@ const generator = require('react-i18n-auto/generator')
 const path = require('path')
 
 generator.gen({
+  
+  // 以下为必选配置项
+  src: path.resolve(__dirname, './code'), //源文件目录 array|string
+  
+  outputPath: path.resolve(__dirname, './output'), //国际化配置输出目录 
+  
+  
+  
+  //以下为可选配置项
 
   excluded: /node_modules|output/, //排除文件选项（默认为：/node_modules/）
-
-  src: path.resolve(__dirname, './code'), //源文件目录（必选）array|string
-
-  outputPath: path.resolve(__dirname, './output'), //国际化配置输出目录（必选）
   
-
-  // 生成本地化语言包（可选）
+  // 生成本地化语言包
   translation: {
     en_US: {
       source: [ path.resolve(__dirname, './output/en_US/英文翻译.xlsx'), ...]   //翻译文件excel array|string
