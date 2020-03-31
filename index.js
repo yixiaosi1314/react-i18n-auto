@@ -1,2 +1,5 @@
-import plugin from 'src/plugin'
-export default plugin
+let plugin = require('./src/plugin')
+let generator = require('./src/generator')
+plugin.config = generator
+module.exports = plugin
+

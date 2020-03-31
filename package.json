@@ -17,14 +17,7 @@
     "url": "https://github.com/mr18/react-i18n-auto/issues"
   },
   "homepage": "https://github.com/mr18/react-i18n-auto#readme",
-  "devDependencies": {},
-  "dependencies": {
-    "react": "^16.13.1",
-    "chalk": "^3.0.0",
-    "ora": "^4.0.3",
-    "xlsx": "^0.15.6",
-    "@babel/cli": "^7.8.4",
-    "@babel/core": "^7.8.6",
+  "devDependencies": {
     "@babel/plugin-proposal-class-properties": "^7.8.3",
     "@babel/plugin-proposal-decorators": "^7.8.3",
     "@babel/plugin-proposal-object-rest-spread": "^7.8.3",
@@ -38,7 +31,14 @@
     "@babel/plugin-syntax-function-bind": "^7.8.3",
     "@babel/plugin-syntax-function-sent": "^7.8.3",
     "@babel/plugin-syntax-jsx": "^7.8.3",
-    "@babel/plugin-syntax-object-rest-spread": "^7.8.3"
-
+    "@babel/plugin-syntax-object-rest-spread": "^7.8.3",
+    "chalk": "^3.0.0"
+  },
+  "dependencies": {
+    "react": "^16.13.1",
+    "ora": "^4.0.3",
+    "xlsx": "^0.15.6",
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.8.6"
   }
 }

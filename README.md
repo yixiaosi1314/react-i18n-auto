@@ -211,6 +211,9 @@ export default Const = {
 #### 备注
 其他不完善的地方，欢迎fork，并提交你的想法。
 
+#### FAQ
+1.运行过程如有报错可尝试升级node版本
+
 
 #### License
 react-i18n-autois licensed under the [MIT License](https://github.com/mr18/react-i18n-auto/blob/master/LICENSE).
