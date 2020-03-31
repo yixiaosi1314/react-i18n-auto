@@ -165,7 +165,7 @@ const plugin = function (api, config) {
           let arg = node.arguments || []
           let uuidKey = (arg[0] || {}).value
 
-          if (!(uuidKey && arg[1] && (!arg[1] || types.isStringLiteral(arg[1])))) {
+          if (!(uuidKey && arg[1] && types.isStringLiteral(arg[1]))) {
 
             let astProgram = types.program([types.expressionStatement(node)])
             let fnCode = babel.transformFromAst(astProgram).code
