@@ -43,11 +43,21 @@ generator.gen({
   },
 
 
-  // 非react16+，babel7+请自行配置babelrc，同时加入react-i18n-auto插件，配置方法同.babelrc，
-  // 此配置项将使pluginOptions失效
+  // 非react16+，babel7+或编译报错时，可自行配置babelrc，同时加入react-i18n-auto插件，配置方法同.babelrc，
+  // 此配置项将使pluginOptions失效（默认配置如下）
   babelrc:{
      plugins:[
-        ...
+         '@babel/plugin-syntax-jsx',
+         ['@babel/plugin-proposal-decorators', {'legacy': true}],
+        '@babel/plugin-syntax-class-properties',
+        '@babel/plugin-syntax-object-rest-spread',
+        '@babel/plugin-syntax-async-generators',
+        '@babel/plugin-syntax-do-expressions',
+        '@babel/plugin-syntax-dynamic-import',
+        '@babel/plugin-syntax-export-extensions',
+        '@babel/plugin-syntax-flow',
+        '@babel/plugin-syntax-function-bind',
+        '@babel/plugin-syntax-function-sent',
         ['react-i18n-auto',{...pluginOptions}]
      ]
   },
