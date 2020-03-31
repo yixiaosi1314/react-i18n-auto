@@ -206,39 +206,13 @@ export default Const = {
 
 #### 结束
 
-* * *
 
-编译前后代码对照，不污染源码，无痕开发
+#### 备注
+其他不完善的地方，欢迎fork，并提交你的想法。
 
-```
-import React from 'react'
-export default class App extends React.Comment {
-  render () {
-    return <div>
-      <header>这是标题</header>
-      <div title='这是提示文字'>
-        <p>这是内容</p>
-      </div>
-      <footer>{this.state.title}</footer>
-    </div>
-  }
-}
-```
-```
-import React from 'react'
-export default class App extends React.Comment {
-  render () {
-    return <div>
-      <header>{$AI('I_5wtgbv1', '这是标题')}</header>
-      <div title={$AI('I_7reuhi4', '这是提示文字')}>
-        <p>{$AI('I_4ximl4b', '这是内容')}</p>
-      </div>
-      <footer>{this.state.title}</footer>
-    </div>
-  }
-}
-```
 
+#### License
+react-i18n-autois licensed under the [MIT License](https://github.com/mr18/react-i18n-auto/blob/master/LICENSE).
 
 
 
