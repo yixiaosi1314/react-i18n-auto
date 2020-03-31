@@ -52,7 +52,7 @@ plugin.config({
          '@babel/plugin-syntax-flow',
          '@babel/plugin-syntax-function-bind',
          '@babel/plugin-syntax-function-sent',
-        ['react-i18n-auto',{...pluginOptions}]
+        ['module:react-i18n-auto',{...pluginOptions}]
      ]
   },
   
@@ -75,7 +75,7 @@ plugin.config({
 })
 
 ```
-然后运行 `node  i18n.config.js` 自动生成配置文件
+然后运行 `node  i18n.config.js` 自动生成配置文件（每次打包前运行即可，生成最新配置）
 
 将`localePolyfill.js`，`localeUtils.js`，语言包文件自动生成到`outputPath`目录下
 
