@@ -22,10 +22,10 @@ react-i18n-auto专门为中文国际化提供的自动化方案，快速迭代�
 #### 第二步：添加自动化配置 `i18n.config.js`
 
 ```
-const generator = require('react-i18n-auto/generator')
+const plugin = require('react-i18n-auto')
 const path = require('path')
 
-generator.gen({
+plugin.config({
   
   // 以下为必选配置项
   src: path.resolve(__dirname, './code'), //源文件目录 array|string
