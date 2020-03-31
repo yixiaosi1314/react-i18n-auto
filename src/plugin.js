@@ -3,6 +3,7 @@ const utils = require('./utils')
 const types = require('@babel/types')
 const babel = require('@babel/core')
 const pluginUtils = require('./plugin-utils')
+const generator = require('./generator')
 const chalk = require('chalk')
 const ora = require('ora')
 const myOra = ora()
@@ -199,6 +200,11 @@ const plugin = function (api, config) {
     }
   }
 }
+/**
+ *
+ * @type {genConfigFile}
+ */
+plugin.config = generator
 /**
  *
  * @type {plugin}
