@@ -1,6 +1,6 @@
 ### 使用说明文档
 #### 第一步：添加babel插件配置（.babelrc添加方式）
-```
+```javascript
   {
     "plugins": [
       "@babel/plugin-transform-runtime",
@@ -11,7 +11,7 @@
 ```
 #### 第二步：添加自动化配置 `i18n.config.js`
 
-```
+```javascript
 const plugin = require('react-i18n-auto')
 const path = require('path')
 
@@ -85,7 +85,7 @@ plugin.config({
 
 #### 第三步：为每一个entry入口添加localePolyfill.js
 
-```
+```javascript
 // webpack.config.js
 const path = require('path')
 module.exports = {
@@ -99,14 +99,14 @@ module.exports = {
 ```
 #### 第四步：修改语言（中文无需加载语言包）
 
-```
+```javascript
 import React from 'react'
 import en_US from '../output/en_US/locale'
 import localeUtils from '../output/localeUtils'
 
 localeUtils.locale(en_US)
 ```
-```
+```javascript
 // locale.js
 module.exports = {
   'I_2gaaanh': 'Student',
@@ -117,7 +117,7 @@ module.exports = {
 #### 第五步：唯一的额外的工作，动态加载语言包时（如果语言包已提前加载则无需此操作）
 
 **修改前**
-```
+```javascript
 // const.js
 export default Const = {
   SelectOptions:[
@@ -133,7 +133,7 @@ export default Const = {
 }
 ```
 
-```
+```javascript
 // app.js
 import React from 'react'
 import Const from './const'
@@ -155,7 +155,7 @@ export default class App extends React.Comment {
 由于const为常量，当语言包`LOCALE`更新时，const并不会得到更新，需要手动调用`$AI`，类似的情况都需要手动更新
 
 **修改后**
-```
+```javascript
 import React from 'react'
 import Const from './const'
 
@@ -176,7 +176,7 @@ export default class App extends React.Comment {
 ```
 
 
-```
+```javascript
 // 编译后的const.js
 // 所有的中文对应的字段，自动添加$_前缀，值为对应中文的uuidKey
 
