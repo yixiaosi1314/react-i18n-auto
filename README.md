@@ -19,7 +19,7 @@ react-i18n-auto专门为中文国际化提供的自动化方案，快速迭代�
 
 
 #### License
-react-i18n-autois licensed under the [MIT License](https://github.com/mr18/react-i18n-auto/blob/master/LICENSE).
+react-i18n-auto is licensed under the [MIT License](https://github.com/mr18/react-i18n-auto/blob/master/LICENSE).
 
 
 
