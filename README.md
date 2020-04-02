@@ -8,7 +8,7 @@
 
 `npm install react-i18n-auto --save-dev`
 
-### [使用说明文档](./documentation.md)
+### [使用说明文档](./doc.md)
 
 
 ### FAQ
