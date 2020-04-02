@@ -7,7 +7,7 @@ const XLSX = require('xlsx')
  * @returns {string|*|XML|void}
  */
 const genPolyfill = function (version) {
-  return  fileUtils.readCodeText(path.resolve(__dirname, './tplCode/polyfill.js')).replace('${version}', version)
+  return fileUtils.readCodeText(path.resolve(__dirname, './tplCode/polyfill.js')).replace('${version}', version)
 }
 /**
  *
@@ -23,11 +23,11 @@ const genLocale = function (version) {
  * @param data
  * @returns {Number|*}
  */
-function genXLSXData (data) {
+function genXLSXData(data) {
   let ws = XLSX.utils.json_to_sheet(data)
   let wb = XLSX.utils.book_new()
   XLSX.utils.book_append_sheet(wb, ws, 'Sheet')
-  return  XLSX.write(wb, {type: 'buffer', bookType: 'xlsx'})
+  return XLSX.write(wb, { type: 'buffer', bookType: 'xlsx' })
 }
 
 /**
@@ -37,5 +37,5 @@ function genXLSXData (data) {
 module.exports = {
   genPolyfill: genPolyfill,
   genLocale: genLocale,
-  genXLSXData:genXLSXData
+  genXLSXData: genXLSXData
 }

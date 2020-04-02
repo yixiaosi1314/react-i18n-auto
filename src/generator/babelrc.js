@@ -5,7 +5,7 @@
 module.exports = {
   plugins: [
     '@babel/plugin-syntax-jsx',
-    ['@babel/plugin-proposal-decorators', {'legacy': true}],
+    ['@babel/plugin-proposal-decorators', { 'legacy': true }],
     '@babel/plugin-syntax-class-properties',
     '@babel/plugin-syntax-object-rest-spread',
     '@babel/plugin-syntax-async-generators',

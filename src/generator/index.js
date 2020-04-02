@@ -35,8 +35,8 @@ const transformCode = function (options) {
       if (isInclude && !isExcluded) {
         let babelConfig = options.babelrc
           ? options.babelrc === true
-            ? {babelrc: true}
-            : Object.assign(options.babelrc, {babelrc: false,})
+            ? { babelrc: true }
+            : Object.assign(options.babelrc, { babelrc: false, })
           : {
             babelrc: false,
             plugins: [].concat(babelrc.plugins, [[plugin, options.pluginOptions || {}]])
@@ -59,7 +59,7 @@ const transformCode = function (options) {
  * @param options
  * @param oldKeysMap
  */
-function genTranslateFile (options, oldKeysMap) {
+function genTranslateFile(options, oldKeysMap) {
   let tranKeys = Object.keys(options.translation || {})
   if (tranKeys && tranKeys.length) {
     myOra.info('翻译文件生成中')
@@ -136,7 +136,7 @@ function genTranslateFile (options, oldKeysMap) {
  *
  * @param opt
  */
-function genConfigFile (opt) {
+function genConfigFile(opt) {
 
   myOra.info('国际化配置生成中')
   let options = Object.assign({

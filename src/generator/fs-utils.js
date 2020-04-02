@@ -7,7 +7,7 @@ const path = require('path')
  * @param list
  * @returns {*|Array}
  */
-function getFileList (filePath, list) {
+function getFileList(filePath, list) {
   list = list || []
   let files = fs.readdirSync(filePath) || []
 
@@ -73,7 +73,7 @@ const writeFile = (filePath, code) => {
    *
    * @param index
    */
-  function mkdir (index) {
+  function mkdir(index) {
     let pathArr = filePathArr.slice()
     pathArr.splice(index, filePathArr.length - 1)
     let dirPath = pathArr.join('\\')

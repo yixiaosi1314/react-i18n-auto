@@ -23,8 +23,8 @@ const plugin = function (api, config) {
        * @param path
        * @constructor
        */
-      StringLiteral (path) {
-        let {node} = path
+      StringLiteral(path) {
+        let { node } = path
         let excludedReg = new RegExp(options.excludedPattern)
         let value = node.value
 
@@ -88,8 +88,8 @@ const plugin = function (api, config) {
        * @param path
        * @constructor
        */
-      ObjectProperty (path) {
-        let {node} = path
+      ObjectProperty(path) {
+        let { node } = path
         let parentNode = path.parent, val = node.key.name || node.key.value
         let excludedReg = new RegExp(options.excludedPattern)
 
@@ -115,8 +115,8 @@ const plugin = function (api, config) {
        * @param path
        * @constructor
        */
-      JSXText (path) {
-        let {node} = path
+      JSXText(path) {
+        let { node } = path
         let value = node.value
         let excludedReg = new RegExp(options.excludedPattern)
 
@@ -132,8 +132,8 @@ const plugin = function (api, config) {
        * @param path
        * @constructor
        */
-      TemplateElement (path) {
-        let {node} = path
+      TemplateElement(path) {
+        let { node } = path
         let value = node.value.raw || node.value.cooked
         let excludedReg = new RegExp(options.excludedPattern)
 
@@ -156,8 +156,8 @@ const plugin = function (api, config) {
        * @param path
        * @constructor
        */
-      CallExpression (path) {
-        let {node} = path
+      CallExpression(path) {
+        let { node } = path
         let parentNode = path.parent
         if (node.callee.name === options.$AI) {
 

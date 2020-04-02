@@ -9,7 +9,7 @@ const myOra = ora()
  * @param value
  * @returns {ObjectProperty}
  */
-function genObjectKeyNode (key, keyVal, value) {
+function genObjectKeyNode(key, keyVal, value) {
   if (keyVal && value) {
     utils.collectKeys(keyVal, value)
   }
@@ -24,7 +24,7 @@ function genObjectKeyNode (key, keyVal, value) {
  * @param path
  * @returns {*}
  */
-function findPropertyParent (path) {
+function findPropertyParent(path) {
   let deepLength = 0
   return path.findParent((path) => {
     deepLength++
@@ -37,7 +37,7 @@ function findPropertyParent (path) {
  * @param path
  * @returns {*}
  */
-function findParentFunctionLikeExpression (path) {
+function findParentFunctionLikeExpression(path) {
   return path.findParent(($path) => {
     let node = $path.node
     return types.isArrowFunctionExpression(node)
@@ -54,7 +54,7 @@ function findParentFunctionLikeExpression (path) {
  * @param key
  * @returns {*}
  */
-function getKeyProperty (properties, key) {
+function getKeyProperty(properties, key) {
   let node = null
   properties.forEach(item => {
     if (item.key && item.key.name === key) {
@@ -72,11 +72,11 @@ function getKeyProperty (properties, key) {
  * @param node
  * @returns {string}
  */
-function getCallExpressionName (node) {
+function getCallExpressionName(node) {
   let callName = ''
 
   // 多级命名空间,如：xxx.xxx.xxx
-  function callObjName (callObj, name) {
+  function callObjName(callObj, name) {
     name += '.' + callObj.property.name
     if (types.isMemberExpression(callObj.object)) {
       return callObjName(callObj.object, name)
@@ -103,7 +103,7 @@ function getCallExpressionName (node) {
  * @param key
  * @returns {*}
  */
-function genAIExpression (value, isExpression, key) {
+function genAIExpression(value, isExpression, key) {
   value = (value || '').trim()
   let valStr = value.replace(/'/g, '"').replace(/(\n)/g, '\\n')
   key = key || utils.genUuidKey(value)

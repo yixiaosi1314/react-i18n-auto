@@ -8,7 +8,7 @@ require('./options')
  * @returns {string}
  */
 
-function genUuidKey (value, prefixKey) {
+function genUuidKey(value, prefixKey) {
   let valArr = (value || '').trim().split(''), code = 0, total = 0
   valArr.forEach((val, index) => {
     let v = val.charCodeAt()
@@ -17,7 +17,7 @@ function genUuidKey (value, prefixKey) {
   })
   code += (value.length + total) * 100000
   let uniqueKey = parseInt(code).toString(36)
-  return (prefixKey || process.$AI_OPTIONS.prefixKey ) + uniqueKey
+  return (prefixKey || process.$AI_OPTIONS.prefixKey) + uniqueKey
 }
 
 /**
@@ -25,7 +25,7 @@ function genUuidKey (value, prefixKey) {
  * @param val
  * @returns {boolean}
  */
-function isChinese (val) {
+function isChinese(val) {
   return /[\u4e00-\u9fa5]/.test(val)
 }
 
@@ -34,7 +34,7 @@ function isChinese (val) {
  * @param key
  * @returns {string}
  */
-function genPropertyKey (key) {
+function genPropertyKey(key) {
   return '$_' + (key || '')
 }
 
@@ -49,7 +49,7 @@ let keysMap = {}
  * @param uuidKey
  * @param value
  */
-function collectKeys (uuidKey, value) {
+function collectKeys(uuidKey, value) {
   if (!process.env.COLLECT_UUID) {
     return
   }
@@ -64,7 +64,7 @@ function collectKeys (uuidKey, value) {
  *
  * @returns {{}}
  */
-function getKeysMap () {
+function getKeysMap() {
   return keysMap
 }
 
