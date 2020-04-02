@@ -4,7 +4,7 @@
   {
     "plugins": [
       "@babel/plugin-transform-runtime",
-      "react-i18n-auto",
+      "module:react-i18n-auto",
       "..."
     ]
   }
