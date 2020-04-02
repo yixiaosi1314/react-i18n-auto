@@ -1,4 +1,4 @@
-const plugin = require('../index')
+const plugin = require('../src/index')
 const path = require('path')
 
 plugin.config({
