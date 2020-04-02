@@ -2,8 +2,14 @@
   "name": "react-i18n-auto",
   "version": "1.1.1",
   "description": "react-i18n-auto 中文国际化自动化，webpack+babel插件",
-  "Keywords": ["react","babel","webpack","i18n","国际化"],
-  "main": "index.js",
+  "Keywords": [
+    "react",
+    "babel",
+    "webpack",
+    "i18n",
+    "国际化"
+  ],
+  "main": "./src/index.js",
   "scripts": {
     "test": "node ./test/i18n.config.js"
   },
@@ -11,8 +17,8 @@
     "type": "git",
     "url": "git+https://github.com/mr18/react-i18n-auto.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "mr18",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/mr18/react-i18n-auto/issues"
   },
