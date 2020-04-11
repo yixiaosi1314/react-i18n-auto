@@ -1,8 +1,8 @@
 {
   "name": "react-i18n-auto",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "description": "react-i18n-auto 中文国际化自动化，webpack+babel插件",
-  "Keywords": [
+  "keywords": [
     "react-i18n-auto",
     "react",
     "i18n",
@@ -10,7 +10,7 @@
     "babel plugin",
     "webpack",
     "国际化"
-  ],
+  ], 
   "main": "./src/index.js",
   "scripts": {
     "test": "node ./test/i18n.config.js"
