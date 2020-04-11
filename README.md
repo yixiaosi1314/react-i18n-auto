@@ -1,10 +1,10 @@
 # react-i18n-auto babel插件
-> `react-i18n-auto` 专门为React中文国际化提供的自动化方案，快速迭代国际化开发，使用方法如下
+`react-i18n-auto` 专门为React中文国际化提供的自动化方案，快速迭代国际化开发，使用方法如下
 
 
 ### 安装
 
- > 推荐环境：`node8+`,`babel7+`,`react16+`,`webpack4+`
+ 推荐环境：`node8+`,`babel7+`,`react16+`,`webpack4+`
 
 `npm install react-i18n-auto --save-dev`
 
