@@ -20,7 +20,7 @@
 ### FAQ
 
 1. 暂不提供时间，货币，单位换算，复数等国际化（主要没有好的方案）
-2. 在本项目运行`node test i18n.config.js` 可查看编译效果。
+2. 在本项目运行`node test/i18n.config.js` 可查看编译效果。
 
 
 ### License
