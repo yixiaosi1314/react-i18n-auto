@@ -1,4 +1,4 @@
-export default ReactI18n = {
+export default {
   locale: (locale) => {
     window.$LOCALE = locale || {}
   }
