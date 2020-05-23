@@ -79,7 +79,7 @@ plugin.config({
 
 将`localePolyfill.js`，`localeUtils.js`，语言包文件自动生成到`outputPath`目录下
 
-`localePolyfill.js`暴露全局方法 `$AI`, `$$AI`  和全局变量 `LOCALE` （语言包），`LOCALE_VERSION` （语言包版本）
+`localePolyfill.js`暴露全局方法 `$AI`, `$$AI`  和全局变量 `$LOCALE` （语言包），`$LOCALE_VERSION` （语言包版本）
 
 
 
