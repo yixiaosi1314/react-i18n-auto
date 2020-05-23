@@ -4,7 +4,7 @@
 
 ### 安装
 
- 推荐环境：`node8+`,`babel7+`,`react16+`,`webpack4+`
+ 推荐环境：`node8+`,`babel7+`,`react15+`,`webpack4+`
 
 `npm install react-i18n-auto --save-dev`
 
