@@ -24,7 +24,8 @@ module.exports = {
       {
         test: /(\.jsx|\.js)$/,
         loader: "babel-loader",
-        exclude: /node_modules/,
+        // 排除locale
+        exclude: /node_modules|locale/,
       },
     ],
   },
