@@ -14,7 +14,7 @@ plugin.config({
     // en_US 语言包目录
     en_US: {
       source: [
-        // path.resolve(__dirname, "./output/en_US/待翻译内容.xlsx"), //翻译文件excel
+        // path.resolve(__dirname, "./output/en_US/翻译文件.xlsx"), //翻译文件excel
         /*,'...'*/
       ],
     },
