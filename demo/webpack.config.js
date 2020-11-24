@@ -24,7 +24,7 @@ module.exports = {
       {
         test: /(\.jsx|\.js)$/,
         loader: "babel-loader",
-        // 排除locale
+        // 排除locale，不需要翻译
         exclude: /node_modules|locale/,
       },
     ],
