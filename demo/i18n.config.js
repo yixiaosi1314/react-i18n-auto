@@ -19,16 +19,4 @@ plugin.config({
       ],
     },
   },
-  // babel插件配置（以下为默认配置）
-  pluginOptions: {
-    prefixKey: "I_", // uuidKey 前缀
-
-    $AI: "$AI", //全局方法$AI，参考localePolyfill.js
-
-    // 排除不需要国际化配置的调用方法
-    // $AI('key','value') key将取代自动生成的uuidKey
-    excludedCall: ["$AI", "require", "$$AI", "console.log", "chalk.yellow"], //$$AI('value') 标记不翻译字符
-
-    excludedPattern: /\.\w+$/, // // 排除不需要配置的字符串，默认文件名
-  },
 });
