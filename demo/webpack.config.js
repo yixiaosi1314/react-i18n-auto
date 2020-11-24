@@ -6,8 +6,6 @@ let entry = {
 module.exports = {
   entry: Object.keys(entry).reduce((acc, cur) => {
     acc[cur] = [
-      // 语言包也可以选择懒加载的方式，但然要确保是最先加载
-      path.resolve(__dirname, "./locale/en_US/locale.js"),
       path.resolve(__dirname, "./locale/localePolyfill.js"),
     ].concat(entry[cur]);
     return acc;
