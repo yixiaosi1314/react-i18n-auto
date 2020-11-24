@@ -1,4 +1,5 @@
 const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 let entry = {
   index: path.resolve(__dirname, "./src/index.js"),
 };
@@ -28,5 +29,11 @@ module.exports = {
       },
     ],
   },
-  plugins: [],
+  plugins: [
+    new HtmlWebpackPlugin({
+      title: "国际化",
+      filename: "index.html",
+      template: "./src/index.html",
+    }),
+  ],
 };
