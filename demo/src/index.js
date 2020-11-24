@@ -1,5 +1,10 @@
 import React from "react";
 import { render } from "react-dom";
+// 语言包要确保是最先加载
+import en_US from "../locale/en_US/locale";
+import localeUtils from "../locale/localeUtils";
+
+localeUtils.locale(en_US);
 export default class App extends React.Component {
   state = {};
   render() {
