@@ -24,9 +24,6 @@
   "bugs": {
     "url": "https://github.com/mr18/react-i18n-auto/issues"
   },
-  "publishConfig": {
-    "registry":"git://github.com/mr18/react-i18n-auto.git"
-  },
   "homepage": "https://github.com/mr18/react-i18n-auto#readme",
   "devDependencies": {},
   "dependencies": {
