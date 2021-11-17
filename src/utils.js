@@ -1,6 +1,7 @@
 
 require('./options')
-
+const ora = require('ora')
+const myOra = ora()
 /**
  *
  * @param value
@@ -55,7 +56,10 @@ function collectKeys(uuidKey, value) {
   }
 
   value = (value || '').replace(/'/g, '"').trim()
-  if (uuidKey && value && !keysMap[uuidKey]) {
+  if (keysMap[uuidKey] && value && keysMap[uuidKey] !== value) {
+    myOra.warn('存在重复的key：'+ uuidKey + ' ---> ' + keysMap[uuidKey] + ' ---> ' + value)
+    myOra.info('请给其中之一添加自定义key值，example：$AI("xxx","'+value+'")')
+  } else if (uuidKey && value && !keysMap[uuidKey]) {
     keysMap[uuidKey] = value
   }
 }
