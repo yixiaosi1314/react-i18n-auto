@@ -16,6 +16,8 @@ function genUuidKey(value, prefixKey) {
     total += v
     code += Math.log10(v) * (index + 1)
   })
+  // 注此方法生成的key，存在重复的可能，概率极小
+  // todo:待优化
   code += (value.length + total) * 100000
   let uniqueKey = parseInt(code).toString(36)
   return (prefixKey || process.$AI_OPTIONS.prefixKey) + uniqueKey
