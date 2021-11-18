@@ -1,3 +1,7 @@
+### [说明文档](./doc.md)
+
+### [DEMO](./demo)
+
 # react-i18n-auto babel插件
 `react-i18n-auto` 专门为React中文国际化提供的自动化方案（低维护成本），快速迭代国际化开发，使用方法如下
 
@@ -8,9 +12,9 @@
 
 `npm install react-i18n-auto --save-dev`
 
-### [说明文档](./doc.md)
 
-### [DEMO](./demo)
+
+
 
 ### 备注
 1. 运行过程如有报错可尝试升级node版本
