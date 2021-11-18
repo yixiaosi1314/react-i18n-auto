@@ -145,10 +145,12 @@ export default Const = {
 ```javascript
 // const.js
 export default Const = {
-  SelectOptions: [{
+  SelectOptions: [
+  {
     name: $AI('I_2gaaanh','学生'),
     value: 'student'
-  }, {
+  }, 
+  {
     name: $AI('I_2aq02r1','教师'), 
     value: 'teacher'
   }]
