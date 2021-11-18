@@ -59,22 +59,14 @@ const plugin = function (api, config) {
                   keyValue = keyNode.value.value
                 }
               }
-
-              let parentCallNode = pluginUtils.findParentFunctionLikeExpression(path)
-
-              if (parentCallNode) {
-
-                let replaceNode = pluginUtils.genAIExpression(value, true, keyValue)
-                path.replaceWith(replaceNode)
+              
+              if(!keyValue){
+                keyValue = utils.genUuidKey(node.value.value)
               }
-              else if (!keyValue) {
 
-                let uuidKey = utils.genUuidKey(node.value.value)
-                let keyNode = pluginUtils.genObjectKeyNode(addKey, uuidKey, node.value.value)
-                parentObjNode.node.properties.push(keyNode)
-              }
-            }
-            else {
+              let replaceNode = pluginUtils.genAIExpression(value, true, keyValue)
+              path.replaceWith(replaceNode)              
+            } else {
 
               let replaceNode = pluginUtils.genAIExpression(value, true)
               path.replaceWith(replaceNode)
@@ -83,33 +75,7 @@ const plugin = function (api, config) {
         }
 
       },
-      /**
-       *
-       * @param path
-       * @constructor
-       */
-      ObjectProperty(path) {
-        let { node } = path
-        let parentNode = path.parent, val = node.key.name || node.key.value
-        let excludedReg = new RegExp(options.excludedPattern)
-
-        if (types.isObjectExpression(parentNode)
-          && utils.isChinese(node.value.value)
-          && !excludedReg.test(node.value.value)) {
-
-          let addKey = utils.genPropertyKey(val)
-          let keyNode = pluginUtils.getKeyProperty(parentNode.properties, addKey)
-          let parentCallNode = pluginUtils.findParentFunctionLikeExpression(path)
-
-          if (!keyNode && !parentCallNode) {
-
-            let uuidKey = utils.genUuidKey(node.value.value)
-            let keyNode = pluginUtils.genObjectKeyNode(addKey, uuidKey, node.value.value)
-            path.insertAfter(keyNode)
-
-          }
-        }
-      },
+      
       /**
        *
        * @param path
@@ -174,23 +140,6 @@ const plugin = function (api, config) {
 
             if (arg[1].value) {
               utils.collectKeys(uuidKey, arg[1].value)
-            }
-
-            if (types.isObjectProperty(parentNode)) {
-
-              let parentObjNode = pluginUtils.findPropertyParent(path)
-
-              if (parentObjNode && parentObjNode.node) {
-
-                let addKey = utils.genPropertyKey(parentNode.key.name || parentNode.key.value)
-                let keyNode = pluginUtils.getKeyProperty(parentObjNode.node.properties, addKey)
-                let parentCallNode = pluginUtils.findParentFunctionLikeExpression(path)
-
-                if (!keyNode && !parentCallNode) {
-                  let keyNode = pluginUtils.genObjectKeyNode(addKey, uuidKey)
-                  parentObjNode.node.properties.push(keyNode)
-                }
-              }
             }
           }
         }
