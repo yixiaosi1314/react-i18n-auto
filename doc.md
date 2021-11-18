@@ -16,27 +16,27 @@ const plugin = require('react-i18n-auto')
 const path = require('path')
 
 plugin.config({
-  
-  // 以下为必选配置项
-  src: path.resolve(__dirname, './code'), //源文件目录 array|string
-  
-  outputPath: path.resolve(__dirname, './output'), //国际化配置输出目录 
-  
-  
-  
-  //以下为可选配置项
+ 
+  // 必选配置项
+  src: path.resolve(__dirname, './code'), //源文件目录 array|string 
+  outputPath: path.resolve(__dirname, './output'), //国际化配置输出目录   
+  excluded: /node_modules|output/, //排除文件选项（默认为：node_modules，及国际化配置输出目录）
 
-  excluded: /node_modules|output/, //排除文件选项（默认为：/node_modules/）
-  
-  // 生成本地化语言包
+  // 本地翻译文件，根据translation配置中的key生成不同的语言包
   translation: {
     en_US: {
-      source: [ path.resolve(__dirname, './output/en_US/英文翻译.xlsx'), ...]   //翻译文件excel array|string
+      source: [ path.resolve(__dirname, './output/en_US/英文翻译.xlsx'), ...]   //翻译文件excel, array|string
     }
     ...
   },
-
-
+ 
+ 
+ 
+ 
+ 
+ 
+  //以下为可选配置项
+  
   // 非react16+，babel7+或编译报错时，可自行配置babelrc，同时加入react-i18n-auto插件，配置方法同.babelrc，
   // 此配置项将使pluginOptions失效（默认配置如下）
   babelrc:{
@@ -55,7 +55,6 @@ plugin.config({
         ['module:react-i18n-auto',{...pluginOptions}]
      ]
   },
-  
   // or
   babelrc: true, //使用当前项目.babelrc配置
   
@@ -63,14 +62,12 @@ plugin.config({
   
   //针对react-i18n-auto插件配置项（默认配置）
   pluginOptions: {
-  
     prefixKey: 'I_', // uuidKey 前缀
     $AI: '$AI', // 国际化调用全局方法名称$AI，参考localePolyfill.js
-
-    // 排除不需要国际化配置的调用方法， $AI('key','value') key将取代自动生成的uuidKey，$$AI('value') 标记不翻译字符
+    // 排除不需要国际化配置的调用方法，
+    // ps: $AI('key','value') key将取代自动生成的uuidKey，$$AI('value') 标记不翻译字符
     excludedCall: ['$AI', 'require', '$$AI', 'console.log', 'chalk.yellow'],
-
-    excludedPattern: /\.\w+$/, // 排除不需要配置的字符串，默认文件名
+    excludedPattern: /\.\w+$/, // 排除不需要配置的字符串，如：文件名
   }
 })
 
