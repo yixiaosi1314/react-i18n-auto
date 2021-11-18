@@ -125,7 +125,7 @@ module.exports = {
 
 #### build：编译参考
 
-**源码**
+****源码****
 ```javascript
 // const.js
 export default Const = {
@@ -141,7 +141,7 @@ export default Const = {
   ]
 }
 ```
- **编译后**
+ ****编译后****
 ```javascript
 // const.js
 export default Const = {
