@@ -61,7 +61,7 @@ const plugin = function (api, config) {
               }
               
               if(!keyValue){
-                keyValue = utils.genUuidKey(node.value.value)
+                keyValue = utils.genUuidKey(node.value)
               }
 
               let replaceNode = pluginUtils.genAIExpression(value, true, keyValue)
