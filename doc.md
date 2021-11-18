@@ -103,7 +103,7 @@ module.exports = {
 import React from 'react'
 
 // 引入语言包
-// ps：如果语言包，在其他文件之后引入，会导致定义常量字段无法翻译。
+// ps：如果语言包，在其他文件之后引入，会导致已经定义的常量字段无法翻译。
 import en_US from '../output/en_US/locale'
 
 // 引入国际化工具
