@@ -27,6 +27,9 @@ plugin.config({
     en_US: {
       source: [ path.resolve(__dirname, './output/en_US/英文翻译.xlsx'), ...]   //翻译文件excel, array|string
     }
+    ja_JP: {
+       ...
+    }
     ...
   },
  
