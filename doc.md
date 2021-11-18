@@ -65,7 +65,7 @@ plugin.config({
   pluginOptions: {
   
     prefixKey: 'I_', // uuidKey 前缀
-    $AI: '$AI', //全局方法$AI，参考localePolyfill.js
+    $AI: '$AI', // 国际化调用全局方法名称$AI，参考localePolyfill.js
 
     // 排除不需要国际化配置的调用方法， $AI('key','value') key将取代自动生成的uuidKey，$$AI('value') 标记不翻译字符
     excludedCall: ['$AI', 'require', '$$AI', 'console.log', 'chalk.yellow'],
