@@ -38,7 +38,8 @@ plugin.config({
   //以下为可选配置项
   
   // 非react16+，babel7+或编译报错时，可自行配置babelrc，同时加入react-i18n-auto插件，配置方法同.babelrc，
-  // 此配置项将使pluginOptions失效（默认配置如下）
+  // 使用此配置，pluginOptions配置则需在plugins中配置，
+  // 配置参考如下：
   babelrc:{
      plugins:[
          '@babel/plugin-syntax-jsx',
@@ -57,7 +58,6 @@ plugin.config({
   },
   // or
   babelrc: true, //使用当前项目.babelrc配置
-  
   
   
   //针对react-i18n-auto插件配置项（默认配置）
