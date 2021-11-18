@@ -97,14 +97,23 @@ module.exports = {
     ...
   },
 ```
-#### 第四步：修改语言（中文无需加载语言包）
+#### 第四步：修改语言，确保语言包最先加载（中文无需加载语言包）
 
 ```javascript
 import React from 'react'
+
+// 引入语言包
+// ps：如果语言包，在其他文件之后引入，会导致定义常量字段无法翻译。
 import en_US from '../output/en_US/locale'
+
+// 引入国际化工具
 import localeUtils from '../output/localeUtils'
 
+// 使用语言包
 localeUtils.locale(en_US)
+
+//import others
+
 ```
 ```javascript
 // locale.js
@@ -114,9 +123,9 @@ module.exports = {
 }
 ```
 
-#### 第五步：唯一的额外的工作，动态加载语言包时（如果语言包已提前加载则无需此操作）
+#### build：编译参考
 
-**修改前**
+**源码**
 ```javascript
 // const.js
 export default Const = {
@@ -132,67 +141,20 @@ export default Const = {
   ]
 }
 ```
-
+ **编译后**
 ```javascript
-// app.js
-import React from 'react'
-import Const from './const'
-
-export default class App extends React.Comment {
-  render () {
-    return <select>
-      {
-        Const.selectOptions.map(item => {
-          return <option key={item.value} value={item.value}>
-             {item.name}
-          </option>
-        })
-      }
-    </select>
-  }
-}
-```
-由于const为常量，当语言包`LOCALE`更新时，const并不会得到更新，需要手动调用`$AI`，类似的情况都需要手动更新
-
-**修改后**
-```javascript
-import React from 'react'
-import Const from './const'
-
-export default class App extends React.Comment {
-  render () {
-    return <select>
-      {
-        Const.selectOptions.map(item => {
-          return <option key={item.value} value={item.value}>
-            {$AI(item.$_name, item.name)} {/*唯一需要修改的地方*/}
-          </option>
-        })
-      }
-    </select>
-  }
-}
-
-```
-
-
-```javascript
-// 编译后的const.js
-// 所有的中文对应的字段，自动添加$_前缀，值为对应中文的uuidKey
-
+// const.js
 export default Const = {
   SelectOptions: [{
-    name: '学生',
-    $_name: "I_2gaaanh",
+    name: $AI('I_2gaaanh','学生'),
     value: 'student'
   }, {
-    name: '教师',
-    $_name: "I_2aq02r1",
+    name: $AI('I_2aq02r1','教师'), 
     value: 'teacher'
   }]
 };
 
 ```
-> ps ：通过代理getter，或提前加载语言包则可跳过步骤5，具体方法可自行尝试
+
 
 #### 结束
