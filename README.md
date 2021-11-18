@@ -1,6 +1,6 @@
 # react-i18n-auto babel插件
 
-### [说明文档](./doc.md)    [DEMO](./demo)
+### [说明文档](./doc.md)&emsp;&emsp;&emsp;[DEMO](./demo)
 
 
 
