@@ -1,13 +1,16 @@
 const path = require("path");
+const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+webpack;
 let entry = {
   index: path.resolve(__dirname, "./src/index.js"),
 };
 module.exports = {
+  mode: "production",
   entry: Object.keys(entry).reduce((acc, cur) => {
-    acc[cur] = [
-      path.resolve(__dirname, "./locale/localePolyfill.js"),
-    ].concat(entry[cur]);
+    acc[cur] = [path.resolve(__dirname, "./locale/localePolyfill.js")].concat(
+      entry[cur]
+    );
     return acc;
   }, {}),
 
