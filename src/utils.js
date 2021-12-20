@@ -10,16 +10,18 @@ const myOra = ora()
  */
 
 function genUuidKey(value, prefixKey) {
-  let valArr = (value || '').trim().split(''), code = 0, total = 0
+  let valArr = (value || "").trim().split("");
+  let code = 0;
+  let total = 0;
   valArr.forEach((val, index) => {
-    let v = val.charCodeAt()
-    total += v
-    code += Math.log10(v) * (index + 1)
-  })
-  // 注此方法生成的key，存在重复的可能，概率极小
-  // todo:待优化
-  code += (value.length + total) * 1000000 //控制key的长度，值越大重复的概率越小
-  let uniqueKey = parseInt(code).toString(36)
+    let v = val.charCodeAt();
+    total += v;
+    code += Math.log10(v) * (index + 1);
+  });
+  // key存在重复的可能，概率极小
+  code *= 100000000;
+  code += value.length + total;
+  let uniqueKey = parseInt(code).toString(36);
   return (prefixKey || process.$AI_OPTIONS.prefixKey) + uniqueKey
 }
 
