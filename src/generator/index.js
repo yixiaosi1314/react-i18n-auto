@@ -67,12 +67,12 @@ function genTranslateFile(options, oldKeysMap) {
     tranKeys.forEach(key => {
 
       let sourceFiles = options.translation[key].source
-      if (typeof sourceFiles === 'string') {
+      if (sourceFiles&&typeof sourceFiles === 'string') {
         sourceFiles = [sourceFiles]
       }
-      let translateObj = {}
+      let translateObj = {};
 
-      sourceFiles.forEach(path => {
+      (sourceFiles||[]).forEach(path => {
 
         let workbook = XLSX.readFile(path)
 
