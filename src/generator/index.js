@@ -114,7 +114,7 @@ function genTranslateFile(options, oldKeysMap) {
       let outputJsonPath = path.resolve(options.outputPath, './' + key + '/待翻译内容.json')
       if (xlsxData.length) {
 
-        myOra.warn(xlsxData.length + '条待翻译')
+        myOra.info(xlsxData.length + '条待翻译')
 
         let buf = genUtils.genXLSXData(xlsxData)
         fileUtils.writeFile(outputXlsxPath, buf)
