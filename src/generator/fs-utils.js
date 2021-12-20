@@ -67,7 +67,7 @@ const readCodeText = (filePath) => {
 const writeFile = (filePath, code) => {
   filePath = path.resolve(filePath)
   let dirname = path.dirname(filePath)
-  let filePathArr = /\\/.test(dirname) ? dirname.split('\\') : dirname.split('/')
+  let filePathArr = dirname.split(path.sep) 
 
   /**
    *
@@ -76,7 +76,7 @@ const writeFile = (filePath, code) => {
   function mkdir(index) {
     let pathArr = filePathArr.slice()
     pathArr.splice(index, filePathArr.length - 1)
-    let dirPath = pathArr.join('\\')
+    let dirPath =  path.normalize(pathArr.join(path.sep))
     if (!fs.existsSync(dirPath) && !/\.[\w\d]+$/.test(dirPath)) {
       fs.mkdirSync(dirPath)
     }
