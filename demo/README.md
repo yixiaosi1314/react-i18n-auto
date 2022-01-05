@@ -12,7 +12,7 @@
 
 ## 翻译文件示例
 
-![image](https://user-images.githubusercontent.com/4214624/148200030-648b4cac-342e-483f-878d-53977effc6e2.png)
+![image](https://user-images.githubusercontent.com/4214624/148220844-94e4196f-4063-4fd9-af25-060beab8bdc5.png)
 
 ## 最终效果
 
