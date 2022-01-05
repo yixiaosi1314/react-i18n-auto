@@ -8,7 +8,7 @@
 
 输出内容将提示：`N条待翻译`
 
-将待翻译内容翻译到新的excel中，格式如下(key列与text列中的内容保持一一对应即可)，并在 i18n.config.js 中加入 translation 配置项即可
+将待翻译内容翻译到新的excel中，格式如下(`key`列与`text`列中的内容保持一一对应即可)，并在 i18n.config.js 中加入 translation 配置项即可
 
 
 ## 翻译文件示例
