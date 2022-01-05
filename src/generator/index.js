@@ -154,9 +154,10 @@ function genConfigFile(opt) {
   transformCode(options)
   myOra.succeed('文件解析完成')
 
-  let keysMap = utils.getKeysMap(), oldKeysMap = {}
+  let keysMap = utils.getKeysMap(), oldKeysMap = {}, hasLocalFlie = false; 
   let localeFilePath = path.resolve(options.outputPath, './zh_CN/locale.js')
   if (fs.existsSync(localeFilePath)) {
+    hasLocalFlie = true
     oldKeysMap = require(localeFilePath)
   }
   let oldKeysMapKeys = Object.keys(oldKeysMap)
@@ -202,7 +203,7 @@ function genConfigFile(opt) {
 
   myOra.succeed('zh_CN 语言包文件生成成功')
 
-  genTranslateFile(options, oldKeysMap)
+  genTranslateFile(options, hasLocalFlie ? oldKeysMap : sortKeysMap)
 
   myOra.succeed('国际化配置及语言包文件生成完毕')
 }
