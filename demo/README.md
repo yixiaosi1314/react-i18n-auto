@@ -17,10 +17,4 @@ ps: 翻译文件示例
 
 最终效果对比：
 
-![image](https://user-images.githubusercontent.com/4214624/148202280-8b2cb3d4-0306-4aa1-a065-a9b3b82863ef.png)
-
-* * *
-
-![image](https://user-images.githubusercontent.com/4214624/148202183-d5171d7d-3965-472e-9421-87c3ee018977.png)
-
-
+![image](https://user-images.githubusercontent.com/4214624/148202978-626bdd94-5791-48ab-97e4-dbcea0cd04c9.png)
