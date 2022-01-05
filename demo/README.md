@@ -10,6 +10,10 @@
 
 将 `待翻译内容.xlsx` 翻译到新的 excel 中，格式如下(`key`列 与 `text`列保持一一对应)，并在 i18n.config.js 中加入 translation 配置项
 
+# END
+
+****
+
 ## 翻译文件示例
 
 ![image](https://user-images.githubusercontent.com/4214624/148220844-94e4196f-4063-4fd9-af25-060beab8bdc5.png)
