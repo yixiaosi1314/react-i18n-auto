@@ -15,7 +15,9 @@ ps: 翻译文件示例
 ![image](https://user-images.githubusercontent.com/4214624/148200030-648b4cac-342e-483f-878d-53977effc6e2.png)
 
 
-最终效果：
+最终效果对比：
 
 ![image](https://user-images.githubusercontent.com/4214624/148201663-58462869-cbb1-4f8a-a0fd-858ce9b860e6.png)
+![image](https://user-images.githubusercontent.com/4214624/148202183-d5171d7d-3965-472e-9421-87c3ee018977.png)
+
 
