@@ -81,7 +81,7 @@ function genTranslateFile(options, oldKeysMap) {
           let sheetData = XLSX.utils.sheet_to_json(workbook.Sheets[name])
           let tempObj = {}
           sheetData.forEach(item => {
-            tempObj[item.key] = (item.text || '').replace(/(<\/?)\s*([a-zA-z])+\s*(>)/g, '$1$2$3')  //移除标签空格
+            tempObj[item.key] = String(item.text || '').replace(/(<\/?)\s*([a-zA-z])+\s*(>)/g, '$1$2$3')  //移除标签空格
           })
           Object.assign(translateObj, tempObj)
         })
